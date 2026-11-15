@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8452t3yceqja"]
+
+[ext_resource type="Script" uid="uid://dlec2rux37xuw" path="res://main_charecter.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://04mmndrdrnb0" path="res://cfr22fa8c9346eaws3.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://bwrmm1akntyyn" path="res://cfr222d0ef586baws3.png" id="3_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://c5ii5hvumuf12" path="res://cfr2415d9a4b38aws3.png" id="4_kdubu"]
+[ext_resource type="Texture2D" uid="uid://brtdls4s6qham" path="res://cfr2498a676178aws3.png" id="5_d21ai"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0hol4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q6r6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kdubu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q6r6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d21ai")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(758, 877.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(3366.5, 377)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Main Charecter" type="CharacterBody2D" parent="."]
+material = SubResource("CanvasItemMaterial_0hol4")
+script = ExtResource("1_0e48y")
+
+[node name="MC walk Right" type="AnimatedSprite2D" parent="Main Charecter"]
+position = Vector2(2.7499633, 19.999958)
+scale = Vector2(0.98231906, 0.9687499)
+sprite_frames = SubResource("SpriteFrames_rj586")
+autoplay = "default"
+frame_progress = 0.57250637
+
+[node name="MC walk Left" type="AnimatedSprite2D" parent="Main Charecter"]
+position = Vector2(4.999996, 41.000023)
+scale = Vector2(0.993421, 0.9967106)
+sprite_frames = SubResource("SpriteFrames_rj586")
+autoplay = "default"
+frame_progress = 0.96349293
+flip_h = true
+
+[node name="Idle" type="Sprite2D" parent="Main Charecter"]
+texture = ExtResource("2_epypp")
+
+[node name="Camera2D" type="Camera2D" parent="Main Charecter"]
+zoom = Vector2(0.1, 0.1)
+
+[node name="Character Collider" type="CollisionShape2D" parent="Main Charecter"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1.001492, 1)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -1561.0
+offset_top = 979.0
+offset_right = 1794.0
+offset_bottom = 1361.0
+color = Color(0.09803922, 0.29411766, 0.09803922, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(118.822754, 1156)
+shape = SubResource("RectangleShape2D_kdubu")
