@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8452t3yceqja"]
+[gd_scene load_steps=12 format=3 uid="uid://b8452t3yceqja"]
 
 [ext_resource type="Script" uid="uid://dlec2rux37xuw" path="res://main_charecter.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://04mmndrdrnb0" path="res://cfr22fa8c9346eaws3.png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://bwrmm1akntyyn" path="res://cfr222d0ef586baws3.png" id="3_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://c5ii5hvumuf12" path="res://cfr2415d9a4b38aws3.png" id="4_kdubu"]
 [ext_resource type="Texture2D" uid="uid://brtdls4s6qham" path="res://cfr2498a676178aws3.png" id="5_d21ai"]
+[ext_resource type="Texture2D" uid="uid://sg4dshgf3kw5" path="res://Grass.png" id="6_kdubu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0hol4"]
 
@@ -31,8 +32,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(758, 877.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
-size = Vector2(3366.5, 377)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
+size = Vector2(443.8733, 52.221848)
+
+[sub_resource type="TileSet" id="TileSet_kdubu"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -59,7 +62,7 @@ flip_h = true
 texture = ExtResource("2_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="Main Charecter"]
-zoom = Vector2(0.1, 0.1)
+zoom = Vector2(0.05, 0.05)
 
 [node name="Character Collider" type="CollisionShape2D" parent="Main Charecter"]
 position = Vector2(0, 2)
@@ -68,13 +71,518 @@ shape = SubResource("RectangleShape2D_q6r6c")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(1.001492, 1)
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = -1561.0
-offset_top = 979.0
-offset_right = 1794.0
-offset_bottom = 1361.0
-color = Color(0.09803922, 0.29411766, 0.09803922, 1)
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(118.822754, 1156)
-shape = SubResource("RectangleShape2D_kdubu")
+[node name="Grass" type="Sprite2D" parent="Node2D"]
+position = Vector2(-1110, 1363)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass2" type="Sprite2D" parent="Node2D"]
+position = Vector2(-1553, 1363)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass2"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass2/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass3" type="Sprite2D" parent="Node2D"]
+position = Vector2(-221, 1363.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass3"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass3/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass4" type="Sprite2D" parent="Node2D"]
+position = Vector2(-665, 1363.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass4"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass4/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass5" type="Sprite2D" parent="Node2D"]
+position = Vector2(660, 1363.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass5"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass5/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass6" type="Sprite2D" parent="Node2D"]
+position = Vector2(216, 1363.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass6"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass6/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass7" type="Sprite2D" parent="Node2D"]
+position = Vector2(1535, 1360.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass7"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass7/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass8" type="Sprite2D" parent="Node2D"]
+position = Vector2(1091, 1360.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass8"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass8/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass9" type="Sprite2D" parent="Node2D"]
+position = Vector2(2410, 1360.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass9"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass9/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass10" type="Sprite2D" parent="Node2D"]
+position = Vector2(1966, 1360.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass10"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass10/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass11" type="Sprite2D" parent="Node2D"]
+position = Vector2(1535, 1360.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass11"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass11/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass12" type="Sprite2D" parent="Node2D"]
+position = Vector2(1091, 1360.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass12"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass12/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass13" type="Sprite2D" parent="Node2D"]
+position = Vector2(2410, 1360.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass13"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass13/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass14" type="Sprite2D" parent="Node2D"]
+position = Vector2(1966, 1360.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass14"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass14/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass15" type="Sprite2D" parent="Node2D"]
+position = Vector2(2845, 1360)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass15"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass15/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass16" type="Sprite2D" parent="Node2D"]
+position = Vector2(3285, 1368)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass16"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass16/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass17" type="Sprite2D" parent="Node2D"]
+position = Vector2(3684, 1376)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass17"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass17/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass18" type="Sprite2D" parent="Node2D"]
+position = Vector2(4563, 1373.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass18"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass18/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass19" type="Sprite2D" parent="Node2D"]
+position = Vector2(4120, 1373.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass19"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass19/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass20" type="Sprite2D" parent="Node2D"]
+position = Vector2(5452, 1373.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass20"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass20/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass21" type="Sprite2D" parent="Node2D"]
+position = Vector2(5008, 1373.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass21"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass21/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass22" type="Sprite2D" parent="Node2D"]
+position = Vector2(6333, 1373.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass22"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass22/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass23" type="Sprite2D" parent="Node2D"]
+position = Vector2(5889, 1373.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass23"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass23/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass24" type="Sprite2D" parent="Node2D"]
+position = Vector2(7208, 1370.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass24"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass24/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass25" type="Sprite2D" parent="Node2D"]
+position = Vector2(6764, 1370.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass25"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass25/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass26" type="Sprite2D" parent="Node2D"]
+position = Vector2(8083, 1370.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass26"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass26/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass27" type="Sprite2D" parent="Node2D"]
+position = Vector2(7639, 1370.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass27"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass27/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass28" type="Sprite2D" parent="Node2D"]
+position = Vector2(7208, 1370.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass28"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass28/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass29" type="Sprite2D" parent="Node2D"]
+position = Vector2(6764, 1370.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass29"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass29/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass30" type="Sprite2D" parent="Node2D"]
+position = Vector2(8083, 1370.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass30"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass30/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass31" type="Sprite2D" parent="Node2D"]
+position = Vector2(7639, 1370.5)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass31"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass31/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass32" type="Sprite2D" parent="Node2D"]
+position = Vector2(8518, 1370.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass32"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass32/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass33" type="Sprite2D" parent="Node2D"]
+position = Vector2(8958, 1378.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass33"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass33/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Grass34" type="Sprite2D" parent="Node2D"]
+position = Vector2(9357, 1386.25)
+scale = Vector2(0.4080882, 0.4011948)
+texture = ExtResource("6_kdubu")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Grass34"]
+position = Vector2(-950.7749, 945.3013)
+scale = Vector2(7.7995114, 2.452623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Grass34/StaticBody2D2"]
+position = Vector2(121.901855, -382.86072)
+scale = Vector2(0.3100229, -8.435382)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+enabled = false
+tile_set = SubResource("TileSet_kdubu")
