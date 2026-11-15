@@ -1,26 +1,58 @@
 extends CharacterBody2D
+var superJumpAnimation = false
 func _process(delta):
 	if Input.is_action_pressed("Right"):
 		position.x += 3500 * delta
 		$"MC walk Right".visible = true
 		$"MC walk Left".visible = false
 		$Idle.visible = false
+		$GroundPound.visible = false
+		$"Jump ready".visible = false
+		$RighAirDash.visible = false
+		$LeftAirDash.visible = false
 	elif Input.is_action_pressed("Left"):
 		position.x += -3500 * delta
 		$"MC walk Left".visible = true
 		$"MC walk Right".visible = false
 		$Idle.visible = false
-	else:
+		$GroundPound.visible = false
+		$"Jump ready".visible = false
+		$RighAirDash.visible = false
+		$LeftAirDash.visible = false
+	elif superJumpAnimation == false:
 		$Idle.visible = true
 		$"MC walk Right".visible = false
 		$"MC walk Left".visible = false
+		$GroundPound.visible = false
+		$"Jump ready".visible = false
+		$RighAirDash.visible = false
+		$LeftAirDash.visible = false
 	if Input.is_action_pressed("GroundPound"):
 		velocity.y = GROUND_POUND_SPEED
+		$Idle.visible = false
+		$"MC walk Right".visible = false
+		$"MC walk Left".visible = false
+		$GroundPound.visible = true
+		$"Jump ready".visible = false
+		$RighAirDash.visible = false
+		$LeftAirDash.visible = false
 	if Input.is_action_pressed("AirDash") and air_dash_number >= 1:
 		if Input.is_action_pressed("Right"):
+			$RighAirDash.visible = true
+			$"MC walk Right".visible = false
+			$"MC walk Left".visible = false
+			$GroundPound.visible = false
+			$"Jump ready".visible = false
+			$LeftAirDash.visible = false
 			velocity.x = AIR_DASH
 			air_dash_number = 0
 		elif Input.is_action_pressed("Left"):
+			$LeftAirDash.visible = true
+			$RighAirDash.visible = false
+			$"MC walk Right".visible = false
+			$"MC walk Left".visible = false
+			$GroundPound.visible = false
+			$"Jump ready".visible = false
 			velocity.x = AIR_DASH * -1
 			air_dash_number = 0
 		elif Input.is_action_pressed("Jump"):
@@ -40,7 +72,11 @@ var air_dash_number = 1
 var prev_frame_vel: Vector2 = Vector2.ZERO
 var was_on_floor = true
 
+
+
+
 func _physics_process(delta):
+
 	await get_tree().create_timer(0.1).timeout
 	if Input.is_action_pressed("Jump"):
 		hold_counter += delta
@@ -78,4 +114,13 @@ func _physics_process(delta):
 	print(velocity.y)
 	prev_frame_vel = velocity
 	was_on_floor = is_on_floor()
+	if hold_counter >= 1:
+		$"MC walk Right".visible = false
+		$"MC walk Left".visible = false
+		$Idle.visible = false
+		$GroundPound.visible = false 
+		$"Jump ready".visible = true
+		$RighAirDash.visible = false
+		$LeftAirDash.visible =false
+	superJumpAnimation = true
 #   and hold_counter >= hold_time:  and is_on_floor()  
